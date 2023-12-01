@@ -2,12 +2,18 @@
 \usepackage{fancyhdr}
 \usepackage{tabto}
 \usepackage{geometry} % Required for adjusting page dimensions and margins
-
-
+\usepackage{enumitem}
+\usepackage[symbol]{footmisc}
+\setlist[itemize]{noitemsep, topsep=0pt, after=\vspace{6pt}}
+\newlength{\mylen}
+\setbox1=\hbox{$\bullet$}\setbox2=\hbox{\tiny$\bullet$}
+\setlength{\mylen}{\dimexpr0.5\ht1-0.5\ht2}
+\renewcommand\labelitemi{\raisebox{\mylen}{\tiny$\bullet$}}
+\newcommand{\return}{\\[6pt]}
 \geometry{
 	paper=letterpaper, % Paper size, change to letterpaper for US letter size
-	top=2.5cm, % Top margin
-	bottom=3cm, % Bottom margin
+	top=2cm, % Top margin
+	bottom=2.5cm, % Bottom margin
 	left=2.5cm, % Left margin
 	right=2.5cm, % Right margin
 	headheight=14pt, % Header height
@@ -15,44 +21,127 @@
 	headsep=1.2cm, % Space from the top margin to the baseline of the header
 	%showframe, % Uncomment to show how the type block is set on the page
 }
-%\input{structure.tex} 
-
-%\pagestyle{fancy}
-%\lhead{Department of Physics\\Kansas State University\\}
-%\chead{\large\textbf{C. James Allison}\\\normalsize\textit{Curriculum Vitae}\\}
-%\rhead{calliso@phys.ksu.edu\\(785) 410-0045\\}
-
+\newcommand{\sect}[1]{
+\noindent\large{\textsc{#1}}\\[-6pt]\normalsize{\noindent\rule{\textwidth}{0.5pt}}
+}
 
 \begin{document}
 \noindent\begin{center}
-	{\large{\textbf{C. James Allison}}}\\
-	236 Cardwell Hall\\
-	Manhattan, KS 66502\\
-	(785) 410-0045 / calliso@phys.ksu.edu
+	{\huge{\textsc{Corbin J. Allison}}}\\
+	Manhattan, KS 66502 $ | $ (785) 410-0045 $ | $ calliso@phys.ksu.edu
 \end{center}
-\subsection*{Education} \textbf{Kansas State University}, Manhattan, KS \\
-Bachelor of Science, Major in Physics, Minors in Mathematics and Computer Science\hfill 2024 \\Thesis: Sensitivity of Ionization Asymmetries in Chiral Molecules to Molecular Quantum State
-\subsection*{Positions}
-\textbf{Kansas State University}\hfill May 2023 - present\\
-{Undergraduate Research Assistant, Kumarappan Group} \\\\
-\textbf{Kansas State University}\hfill June 2022 - present\\
-{Undergraduate Research Assistant, Greenman Group}\\\\
-\textbf{Kansas State University}\hfill August 2021 - May 2023\\
-{Undergraduate Teaching Assistant}  \\\\
-\textbf{Heartland Electric, Inc.}\hfill May 2015 - August 2022\\
-{Electrician}  
-\subsection*{Presentations}
-GRC/GRS Quantum Control of Light and Matter, Newport, RI, August 2023. Allison, C; Goetz, RE; Blech A; Koch, CP; Greenman, L. "Control of Photoelectron Circular Dichroism with RABBITT" (poster). \\\\
-NSF REU at K-State: Interactions of Matter, Light and Learning, August 2023. Allison, Corbin. "Calculation of Ionization Asymmetries in Chiral Molecules."
-%\subsection*{Publications}
-\subsection*{Awards}
-University Honors Program Completion Grand \hfill Oct. 2023 \\\\
-James R. Macdonald Memorial Scholarship \hfill 2023 - 2024 \\\\
-K-State Dependent/Spouse Grant \hfill2023 - 2024 \\\\
-Cardwell Fund \hfill 2022 - 2023 \\\\
-Basil \& Mary Curnutte Scholarship \hfill 2022 - 2023 \\\\
-Leo E. Hudiburg Scholarship \hfill 2021 - 2022 \\\\
-K-State Dependent/Spouse Grant \hfill2017 - 2018 \\\\
-Foundation Plus Scholarship\hfill 2017 - 2018
+\sect{Education} \textbf{Kansas State University}, Manhattan, KS\hfill Expected: May 2024 \\
+Bachelor of Science in Physics\\ Minors in Mathematics and Computer Science \begin{itemize}
+	\item University Honors Program
+	\item Cumulative GPA: 3.808/4.000, Physics GPA: 4.000/4.000
+	\item Thesis: Sensitivity of Ionization Asymmetries in Chiral Molecules to Molecular Quantum State 
+\end{itemize}
+\sect{Research Experience}
+\textbf{James R. Macdonald Laboratory}, Manhattan, KS\hfill May 2023 - Present\\
+{Undergraduate Research Assistant $ | $ Advisor: Dr. Vinod Kumarappan} \begin{itemize}
+	\item Experimental study of chiral molecules with the reconstruction of attosecond beating by interference of two-photon transitions (RABBITT) experimental technique
+	\item Use of LabVIEW for data acquisition and parallel processing, camera interfacing with BitFlow
+	\item Understanding of high vacuum techniques and particle detection with velocity map imaging (VMI) and microchannel plates (MCP)
+\end{itemize}
+\textbf{Kansas State University Department of Physics}, Manhattan, KS\hfill May 2023 - August 2023\\
+{REU Participant $ | $ Advisor: Dr. Loren Greenman} \begin{itemize}
+	\item Sensitivity analysis of ionization asymmetries obtained from time-dependent perturbation theory with respect to Hartree-Fock calculations, basis for Bachelor's thesis (in preparation)
+	\item Use of Molpro quantum chemistry software for Hartree-Fock calculations, ePolyScat package for computing molecular photoionization
+	\item Use of high performance computing on the Beocat Research Cluster at Kansas State University and Perlmutter at the National Energy Research Scientific Computing Center (NERSC) 
+\end{itemize}
+\textbf{Kansas State University Department of Physics}, Manhattan, KS\hfill June 2022 - Present\\
+{Undergraduate Research Assistant $ | $ Advisor: Dr. Loren Greenman} \begin{itemize}
+	\item Theoretical study of ionization asymmetries in chiral molecules using time-dependent perturbation theory, control using the RABBITT experimental technique
+	\item Internationally collaborative with groups at ETH Z\"{u}rich and Freie Universität Berlin, opportunity to attend and present at the 2023 Gordon Research Conference on Quantum Control of Light and Matter
+	\item Use of high performance computing resources from Beocat and NERSC, programming using Fortran 90, Bash, and Python
+\end{itemize}
+\sect{Teaching Experience}
+\textbf{Descriptive Physics} \hfill January 2022 - May 2023\\
+Kansas State University $ | $ Primary instructors: Dr. Barbara Fennel \& Dr. Bret Flanders
+\begin{itemize}
+	\item Two semesters as undergraduate teaching assistant: introduced lab activities to students, graded lab reports, and held office hours to assist students with course materials
+	\item One semester as coordinator: set up and tore down lab activities, led meetings to introduce lab activities to other teaching assistants
+\end{itemize}
+\textbf{Concepts of Physics} \hfill August 2021 - December 2022\\
+Kansas State University $ | $ Primary instructor: Dr. JT Laverty
+\begin{itemize}
+	\item Two semesters as undergraduate teaching assistant and coordinator
+	\item Guided students through lab activities, graded lab reports and exams, set up and tore down lab activities\vspace{-12pt}
+\end{itemize}
+\sect{Additional Work Experience}
+\textbf{Heartland Electric, Inc.}, Fort Riley, KS\hfill May 2015 - August 2022\\
+Electrician\begin{itemize}
+	\item Industrial, commercial, and residential electrical installation, troubleshooting, and repair
+	\item Independent work on control systems, including SCADA, variable frequency drives, and motor control systems
+\end{itemize}
+\sect{Presentations}
+%Kansas Honors Connection Conference, Emporia State University, November 2023. Corbin Allison. ``Control of Ionization Asymmetries in Chiral Molecules with Attosecond Techniques." \return
+Physics Undergraduate Research Colloquium, Kansas State University, October 2023. Corbin Allison. ``Control of Ionization Asymmetries in Chiral Molecules with Attosecond Techniques." \return
+GRC/GRS Quantum Control of Light and Matter, Newport, RI, August 2023. C. Allison, R.E. Goetz, A. Blech, C.P. Koch, and L. Greenman. ``Control of Photoelectron Circular Dichroism with RABBITT" (poster). \return
+NSF REU at K-State: Interactions of Matter, Light and Learning, Kansas State University, August 2023. Corbin Allison. ``Calculation of Ionization Asymmetries in Chiral Molecules."\return
+\sect{Publications}
+\textit{Continuum-electron interferometry for enhancement of photoelectron circular dichroism and measurement of bound, free, and mixed contributions to chiral response}, R.E. Goetz, A. Blech,
+C. Allison, C.P. Koch, and L. Greenman, submitted, (2023)\return
+\sect{Awards}
+University Honors Program Completion Grant \hfill October 2023 \return
+James R. Macdonald Memorial Scholarship \hfill August 2023 - May 2024 \return
+K-State Dependent/Spouse Grant \hfill August 2023 - May 2024 \return
+Cardwell Fund \hfill August 2022 - May 2023 \return
+Basil \& Mary Curnutte Scholarship \hfill August 2022 - May 2023 \return
+Leo E. Hudiburg Scholarship \hfill August 2021 - May 2022 \return
+K-State Dependent/Spouse Grant \hfill August 2017 - May 2018 \return
+Foundation Plus Scholarship\hfill August 2017 - May 2018 \return
+\sect{Languages and Skills}
+\textbf{Languages:} English (native), Spanish (A2) \return
+\textbf{Programming languages:} Python, Fortran, C/C++/C\#, Java, Bash, \LaTeX \return
+\textbf{Software:} LabVIEW, Molden, Git, MATLAB, Mathematica, Vim, Jupyter \return
+\sect{Programming Projects}
+\textbf{Image compression and deblurring with SVD}, MATLAB 
+\begin{itemize}
+	\item Implementation of algorithms to compress and deblur images using singular value decomposition and low-rank approximation
+	\item Application to grayscale and color images (RGB and YCbCr) to compare with JPEG compression
+\end{itemize} 
+\textbf{The Labyrinth}, Java \& XML
+\begin{itemize}
+	\item Java based video game for Android devices
+	\item Demonstrated object-oriented programming, data structuring using HashMaps, and file I/O with objects
+	\item Learned about GUI programming for Android devices using XML
+\end{itemize}
+\newpage
+\sect{Relevant Coursework}
+\textbf{Physics Courses:}\begin{itemize}
+	\item PHYS 694 - Particle Physics\hfill Spring 2024
+	\item PHYS 506 - Advanced Physics Laboratory\hfill Spring 2024
+	\item PHYS 870 - Introduction to Atomic, Molecular, and Optical Physics\footnote[1]{Graduate course}\hfill Fall 2023
+	\item PHYS 709 - Applied Quantum Mechanics\hfill Fall 2023
+	\item PHYS 497 - Senior Research in Physics \hfill Fall 2023
+	\item PHYS 662 - Introduction to Quantum Mechanics \hfill Spring 2023
+	\item PHYS 636 - Physical Measurements Instrumentation \hfill Spring 2023
+	\item PHYS 633 - Electromagnetic Fields II \hfill Spring 2023
+	\item PHYS 664 - Thermodynamics and Statistical Physics \hfill Fall 2022
+	\item PHYS 532 - Electromagnetic Fields I \hfill Fall 2022
+	\item PHYS 325 - Physics III, Relativity, and Quantum Physics \hfill Fall 2022
+	\item PHYS 522 - Mechanics \hfill Spring 2022
+	\item PHYS 214 - Engineering Physics II \hfill Fall 2021
+	\item PHYS 213 - Engineering Physics I \hfill Spring 2021\\[-12pt]
+\end{itemize}
+\textbf{Mathematics Courses:}
+\begin{itemize}
+	\item MATH 511 - Introduction to Algebraic Systems \hfill Spring 2024
+	\item MATH 715 - Applied Mathematics I$ ^* $ \hfill Fall 2023
+	\item MATH 515 - Introduction to Linear Algebra\hfill Spring 2023
+	\item MATH 221 - Analytic Geometry and Calculus II\hfill Spring 2020
+	\item MATH 340 - Elementary Differential Equations\hfill Summer 2020
+	\item MATH 222 - Analytic Geometry and Calculus III\hfill Spring 2019
+	\item MATH 220 - Analytic Geometry and Calculus I\hfill Fall 2017\\[-12pt]
+\end{itemize}
+\textbf{Computer Science Courses:}
+\begin{itemize}
+	\item CIS 301 - Logical Foundations of Programming\hfill Spring 2024
+	\item CIS 300 - Data and Program Structures\hfill Fall 2022
+	\item CIS 115 - Introduction to Computing Science\hfill Summer 2022
+	\item CIS 200 - Programming Fundamentals\hfill Spring 2022
+	\item ECE 241 - Introduction to Computer Engineering\hfill Fall 2020\\[0pt]
+\end{itemize}
 
 \end{document}
