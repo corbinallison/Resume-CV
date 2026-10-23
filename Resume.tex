@@ -1,34 +1,79 @@
-%%%%%%%%% CORBIN ALLISON %%%%%%%%%
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
-\documentclass{article}
-
-\input{structure.tex} % Include the file specifying the document structure and custom commands
-
-%----------------------------------------------------------------------------------------
-%	ASSIGNMENT INFORMATION
-%----------------------------------------------------------------------------------------
-
-\title{: Homework \#} % Title of the assignment
-
-\author{Corbin Allison} % Author name and email address
-
-\date{\today} % University, school and/or department name(s) and a date
-
-%----------------------------------------------------------------------------------------
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	urlcolor=blue,
+	pdftitle={Corbin J. Allison Resume},
+}
+\geometry{
+	paper=letterpaper,
+	top=1.5cm,
+	bottom=1.5cm,
+	left=1.8cm,
+	right=1.8cm,
+}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{noitemsep, topsep=1pt, leftmargin=14pt, after=\vspace{4pt}}
+\newlength{\mylen}
+\setbox1=\hbox{$\bullet$}\setbox2=\hbox{\tiny$\bullet$}
+\setlength{\mylen}{\dimexpr0.5\ht1-0.5\ht2}
+\renewcommand\labelitemi{\raisebox{\mylen}{\tiny$\bullet$}}
+\newcommand{\sect}[1]{
+\par\needspace{3\baselineskip}\vspace{8pt}\noindent\large{\textsc{#1}}\\[-8pt]\normalsize{\noindent\rule{\textwidth}{0.5pt}}\\[-2pt]
+}
+% \job{Organization}{location or link}{dates}{role}
+\newcommand{\job}[4]{\textbf{#1}, #2\hfill #3\\ \textit{#4}}
 
 \begin{document}
+\begin{center}
+	{\LARGE{\textsc{Corbin J. Allison}}}\\[2pt]
+	Denver, CO $ | $ (785) 410-0045 $ | $ \href{mailto:corbinjallison@gmail.com}{corbinjallison@gmail.com} $ | $ \href{https://tollwarden.com}{tollwarden.com} $ | $ \href{https://github.com/tollwarden/tollwarden}{github.com/tollwarden}
+\end{center}
 
-\maketitle % Print the title
-\hrule
+\sect{Experience}
+\job{TollWarden, LLC}{\href{https://tollwarden.com}{tollwarden.com}}{July 2026 - Present}{Founder and Software Engineer}
+\begin{itemize}
+	\item Built and operate a payment security service for AI agents that pay with x402 stablecoin micropayments. Each scan returns an Ed25519-signed allow, flag, or block verdict bound to a hash of the exact payment
+	\item Wrote detectors for prompt-injection-triggered payments, replay, address poisoning, overpayment, and secret leakage, gated in CI by an evaluation corpus of 125 attack and benign cases
+	\item Node.js and TypeScript server with 763 automated tests, deployed on Render and published to npm and the MCP Registry, plus TypeScript and Python SDKs and integrations for LangChain, CrewAI, the Vercel AI SDK, NVIDIA NeMo, and Coinbase AgentKit
+	\item Run five scheduled AI agents that red-team the detectors, propose detector fixes, review prepared branches, and draft documentation, each limited to its own files, with every merge approved by hand
+\end{itemize}
+\job{JILA, University of Colorado Boulder}{Boulder, CO}{October 2025 - July 2026}{Graduate Researcher, Becker group}
+\begin{itemize}
+	\item Simulated ionization and nonlinear upconversion of argon and xenon in intense multichromatic laser fields by solving the time-dependent Schr\"{o}dinger equation in Fortran 90, toward vacuum-ultraviolet excitation of the $^{229\mathrm{m}}$Th nuclear clock transition
+	\item Built Python analysis for photoelectron spectra, angular distributions, and high-harmonic yields, and presented the results at DAMOP 2026
+\end{itemize}
+\job{Kansas State University}{Manhattan, KS}{June 2022 - August 2024}{Undergraduate Researcher, Greenman group and James R. Macdonald Laboratory}
+\begin{itemize}
+	\item Computed attosecond-controlled ionization asymmetries in chiral molecules with Molpro and ePolyScat on NERSC Perlmutter, leading to co-authored papers in \textit{Nature} and \textit{Physical Review Research}
+	\item Ran LabVIEW data acquisition for an attosecond RABBITT experiment with velocity map imaging
+\end{itemize}
+\job{Heartland Electric, Inc.}{Fort Riley, KS}{May 2015 - August 2022}{Electrician}
+\begin{itemize}
+	\item Installed, troubleshot, and repaired industrial, commercial, and residential electrical systems, including SCADA, variable frequency drive, and motor control systems
+\end{itemize}
 
+\sect{Education}
+\textbf{University of Colorado Boulder}, M.S. in Physics\hfill Expected May 2027\\
+Coursework in quantum mechanics, statistical mechanics, quantum optics, and computational chemistry. Graduate teaching assistant since August 2024 for General Physics 1, Electronics for the Physical Sciences (lab sections and circuit debugging), and Atomic and Molecular Spectra\\[4pt]
+\textbf{Kansas State University}, B.S. in Physics, minors in Mathematics and Computer Science\hfill May 2024\\
+University Honors Program thesis on attosecond control of photoionization in chiral molecules
 
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION
-%----------------------------------------------------------------------------------------
-\problem{1}
+\sect{Publications}
+M. Han, J.-B. Ji, A. Blech, R. E. Goetz, \textbf{C. Allison}, L. Greenman, C. P. Koch, and H. J. W\"{o}rner, Attosecond control and measurement of chiral photoionization dynamics, \textit{Nature} \textbf{645}, 95 (2025)\\[3pt]
+R. E. Goetz, A. Blech, \textbf{C. Allison}, C. P. Koch, and L. Greenman, Continuum-electron interferometry for enhancement of photoelectron circular dichroism, \textit{Phys. Rev. Research} \textbf{7}, L032036 (2025)
 
+\sect{Skills}
+\noindent\begin{tabular}{@{}p{2.6cm}p{\dimexpr\textwidth-2.6cm-2\tabcolsep\relax}@{}}
+	\rule{0pt}{11pt}\textbf{Languages} & TypeScript, JavaScript, Python, Fortran, C/C++, Bash, \LaTeX \\
+	\textbf{AI} & Claude Code and agent workflows, Model Context Protocol, LangChain, CrewAI, LLM evaluation and prompt-injection detection \\
+	\textbf{Engineering} & Node.js, Git, GitHub Actions release automation, Docker, Render, npm and PyPI, Ed25519 signing, HPC (NERSC) \\
+\end{tabular}
 
 \end{document}
